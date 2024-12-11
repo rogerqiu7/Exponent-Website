@@ -1,0 +1,56 @@
+/* Styles for the main heading */
+h1 {
+    color: #FFFFFF;
+    font-family: system-ui;
+    margin-left: 20px;
+}
+
+/* Styles for the entire page body */
+body {
+    background-color: #222629;
+}
+
+/* Added styles for the name fields container */
+.name-fields {
+    margin-bottom: 20px;
+}
+
+/* Styles for all label elements */
+label {
+    color: #86C232;
+    font-family: system-ui;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: inline-block; /* Makes labels align better with inputs */
+}
+
+/* Styles for the calculate button */
+button {
+    background-color: #86C232;
+    border-color: #86C232;
+    color: #FFFFFF;
+    font-family: system-ui;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 140px;
+    cursor: pointer; /* Added to show it's clickable */
+}
+
+/* Styles for input fields */
+input {
+    color: #222629;
+    font-family: system-ui;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 100px;
+    padding: 5px; /* Added for better text visibility */
+}
+
+/* Added specific styles for name inputs */
+#firstName, #lastName {
+    width: 150px; /* Wider fields for names */
+}

@@ -1,0 +1,3 @@
+#api gateway: https://sf2znk7lo2.execute-api.us-east-1.amazonaws.com/dev
+
+#arn:aws:dynamodb:us-east-1:615299763319:table/ExponentDatabase
