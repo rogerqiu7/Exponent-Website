@@ -4,6 +4,7 @@ pipeline {
     environment {
         AWS_CREDENTIALS = credentials('aws-credentials')
         TERRAFORM_DIR = './terraform'
+        TERRAFORM = '/usr/local/bin/terraform'  // Updated to your specific path
     }
     
     stages {
@@ -16,7 +17,7 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 dir(TERRAFORM_DIR) {
-                    sh 'terraform init'
+                    sh '${TERRAFORM} init'
                 }
             }
         }
@@ -24,7 +25,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 dir(TERRAFORM_DIR) {
-                    sh 'terraform plan -out=tfplan'
+                    sh '${TERRAFORM} plan -out=tfplan'
                 }
             }
         }
@@ -32,7 +33,13 @@ pipeline {
     
     post {
         always {
-            cleanWs() // Simplified cleanup
+            script {
+                node {
+                    ws(env.WORKSPACE) {
+                        cleanWs()
+                    }
+                }
+            }
         }
         success {
             echo '✅ Terraform deployment succeeded!'
