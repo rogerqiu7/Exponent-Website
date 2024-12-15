@@ -32,16 +32,14 @@ pipeline {
     
     post {
         always {
-            node {
-                cleanWs()
-            }
+            cleanWs() // Simplified cleanup
+        }
+        success {
+            echo '✅ Terraform deployment succeeded!'
         }
         failure {
             echo '❌ Terraform deployment failed!'
             echo 'Please check the logs above for errors'
-        }
-        success {
-            echo '✅ Terraform deployment succeeded!'
         }
     }
 }
