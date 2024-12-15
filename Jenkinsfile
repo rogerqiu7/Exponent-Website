@@ -30,19 +30,7 @@ pipeline {
             }
         }
 
-        stage('Approval') {
-            when {
-                branch 'main'
-            }
-            steps {
-                input message: 'Do you want to apply this plan?', ok: 'Apply'
-            }
-        }
-
         stage('Terraform Apply') {
-            when {
-                branch 'main'
-            }
             steps {
                 dir(TERRAFORM_DIR) {
                     sh '${TERRAFORM} apply -auto-approve tfplan'
