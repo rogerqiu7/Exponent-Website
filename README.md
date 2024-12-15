@@ -1,5 +1,5 @@
 # Exponent Web App
-Full-stack DevOps project using Javascript, REST API, Terraform, AWS, and Jenkins
+Full-stack DevOps project using Terraform, AWS, Jenkins, Javascript and REST APIs
 
 ## Project Overview
 This project uses a simple exponent calculator web application with a complete CI/CD pipeline and cloud infrastructure. When users input a base number and exponent, the application calculates the result and stores the data in a database.
