@@ -34,13 +34,13 @@ exponent-website/
 ### 1. User enters numbers and name on web interface
 ![alt text](pics/exponent-webpage.png)
 
-### 2. Interface is hosted on Amplfiy
+### 2. Interface is hosted on Amplify
 ![alt text](pics/amplify.png)
 
-### 3. API Gateway receives request
+### 3. API Gateway receives request and calls Lambda Function
 ![alt text](pics/api-gateway.png)
 
-### 4. Lambda function processes calculation
+### 4. Lambda function processes calculation and sends results to DynamoDB
 ![alt text](pics/lambda-function.png)
 
 ### 5. Results stored in DynamoDB
@@ -49,12 +49,12 @@ exponent-website/
 ### 6. IAM role for Lambda access to DynamoDB
 ![alt text](pics/iam-role.png)
 
-### 7. Data automatically archived to S3 
+### 7. Data archived to S3 using DynamoDB feature
 ![alt text](pics/s3-bucket.png)
 
 ### 8. Historical data queryable via Athena
 ![alt text](pics/athena-query.png)
 
-### 9. Updates to repo and automatically applied using Jenkins
+### 9. Updates to repo can be automatically applied using Jenkins
 ![alt text](pics/jenkins-console.png)
 ![alt text](pics/jenkins-output.png)
