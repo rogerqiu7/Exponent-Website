@@ -4,7 +4,7 @@ pipeline {
     environment {
         AWS_CREDENTIALS = credentials('aws-credentials')
         TERRAFORM_DIR = './terraform'
-        TERRAFORM = '/usr/local/bin/terraform'  // Updated to your specific path
+        TERRAFORM = '/usr/local/bin/terraform'
     }
     
     stages {
@@ -26,6 +26,26 @@ pipeline {
             steps {
                 dir(TERRAFORM_DIR) {
                     sh '${TERRAFORM} plan -out=tfplan'
+                }
+            }
+        }
+
+        stage('Approval') {
+            when {
+                branch 'main'
+            }
+            steps {
+                input message: 'Do you want to apply this plan?', ok: 'Apply'
+            }
+        }
+
+        stage('Terraform Apply') {
+            when {
+                branch 'main'
+            }
+            steps {
+                dir(TERRAFORM_DIR) {
+                    sh '${TERRAFORM} apply -auto-approve tfplan'
                 }
             }
         }
