@@ -68,5 +68,5 @@ variable "dynamodb_table_name" {
 variable "s3_bucket_name" {
   description = "Name of the S3 bucket"
   type        = string
-  default     = "exponent-database-devops-project"
+  default     = "exponent-database-devops-project-rogerqiu"
 }
